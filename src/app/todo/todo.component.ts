@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -7,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   
-  addTodo: string = 'newTodo';
+  addTodo: string = "this";
 
-  constructor() { 
-    
+  constructor() {
 
   }
 
