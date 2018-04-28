@@ -8,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   
-  addTodo: string = "this";
+  
+  addTodo: string = ""; 
+  toDoList: string[] = [];
+  
+  addNewToDo(){
+    let newTodo = this.addTodo;
+    this.toDoList.push(newTodo);
+    console.log(newTodo);
+  }
+
+  deleteToDo(i){
+    this.toDoList.splice(i);
+  }
+  
 
   constructor() {
 

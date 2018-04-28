@@ -2,6 +2,10 @@
   todo works!
 </p>
 <div>
- <button type = "button"> Add Todo </button> 
+ <button (click) = "addNewToDo()"> Add Todo </button> 
  <input class = "number" type = "text" [(ngModel)]="addTodo">
+ <li *ngFor = "let newToDo of toDoList">
+ {{ newToDo }} 
+<button (click) = "deleteToDo(i)" > Delete </button>
+ </li>
 </div> 
