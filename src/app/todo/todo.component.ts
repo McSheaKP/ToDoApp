@@ -18,10 +18,9 @@ export class TodoComponent implements OnInit {
     console.log(newTodo);
   }
 
-  deleteToDo(i){
-    this.toDoList.splice(i);
+  deleteToDo(i) {
+    this.toDoList.splice(i, 1);
   }
-  
 
   constructor() {
 

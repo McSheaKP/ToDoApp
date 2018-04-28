@@ -1,11 +1,16 @@
 <p>
-  todo works!
+  
 </p>
 <div>
- <button (click) = "addNewToDo()"> Add Todo </button> 
+ 
+<button (click) = "addNewToDo()"> Add Todo </button> 
  <input class = "number" type = "text" [(ngModel)]="addTodo">
- <li *ngFor = "let newToDo of toDoList">
- {{ newToDo }} 
-<button (click) = "deleteToDo(i)" > Delete </button>
- </li>
+
+ <ol>
+    <li *ngFor = "let newToDo of toDoList; let i = index">
+      {{ newToDo }} 
+      <button (click) = "deleteToDo(i)" > Delete </button>
+    </li>
+</ol>
+
 </div> 
