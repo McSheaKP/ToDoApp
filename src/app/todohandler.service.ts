@@ -4,17 +4,16 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TodohandlerService {
 
-  addTodo: string = ""; 
-  toDoList: string[] = [];
   
-  addNewToDo(){
-    let newTodo = this.addTodo;
-    this.toDoList.push(newTodo);
-    console.log(newTodo);
+
+  addNewItem(array, item) {
+    array.push(item);
+    return array;
   }
 
-  deleteToDo(i) {
-    this.toDoList.splice(i, 1);
+  deleteItem(array, index) {
+    array.splice(index, 1);
+    return array;
   }
 
   constructor() { }

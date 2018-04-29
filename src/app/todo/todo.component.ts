@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TodohandlerService } from '../todohandler.service';
+import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 
 @Component({
@@ -7,27 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  
-  
-  addTodo: string = ""; 
-  toDoList: string[] = [];
-  
-  addNewToDo(){
-    let newTodo = this.addTodo;
-    this.toDoList.push(newTodo);
-    console.log(newTodo);
+
+  constructor (private todohandlerService: TodohandlerService){}
+    addTodo: string = "";
+    toDoList: string[] = [];
+
+    addNewToDo(){
+      this.toDoList = this.todohandlerService.addNewItem(this.toDoList, this.addTodo);
+    }
+    
+    deleteToDo(i){
+      this.todohandlerService.deleteItem(this.toDoList, i);
+    }
   }
 
-  deleteToDo(i) {
-    this.toDoList.splice(i, 1);
-  }
-
-  constructor() {
-
-  }
-
-
-  ngOnInit() {
-  }
+  //ngOnInt(){
+  //}
 
 }

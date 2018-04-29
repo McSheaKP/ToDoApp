@@ -2,10 +2,8 @@
   
 </p>
 <div>
- 
-<button (click) = "addNewToDo()"> Add Todo </button> 
+ <button (click) = "addNewToDo()"> Add Todo </button> 
  <input class = "number" type = "text" [(ngModel)]="addTodo">
-
  <ol>
     <li *ngFor = "let newToDo of toDoList; let i = index">
       {{ newToDo }} 
